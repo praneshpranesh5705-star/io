@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Green Basket Fruits</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap">
+<style>
+:root{--bg:#fbfbf8;--ink:#17261d;--mute:#5b6b61;--green:#14402b;--mango:#ffb703;--pink:#e0357a;--card:#ffffff;--line:#dfe4dc;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(3deg)}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a14;--ink:#eef3ec;--mute:#a2b1a7;--green:#7fd6a0;--card:#17251d;--line:#28382e}}
+:root[data-theme="dark"]{--bg:#0f1a14;--ink:#eef3ec;--mute:#a2b1a7;--green:#7fd6a0;--card:#17251d;--line:#28382e}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:
+radial-gradient(600px 300px at 92% -60px,rgba(255,183,3,.28),transparent 70%),
+radial-gradient(500px 260px at -5% 10%,rgba(224,53,122,.16),transparent 70%),
+var(--bg);color:var(--ink);font:400 17px/1.55 "Bricolage Grotesque",system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo .dot{width:10px;height:10px;border-radius:50%;background:var(--pink);display:inline-block}
+nav a{margin-left:18px;text-decoration:none;color:var(--mute);font-weight:600;position:relative}
+nav a:hover{color:var(--ink)}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-weight:600;font-size:13px;color:var(--green);margin-bottom:16px;animation:rise .6s ease both}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:36px 0 56px;position:relative}
+h1{font-size:clamp(40px,7vw,76px);line-height:.98;letter-spacing:-.04em;font-weight:800;margin:0 0 18px;color:var(--green);animation:rise .7s ease .05s both}
+.hero p{max-width:34ch;color:var(--mute);font-size:19px;margin:0 0 24px;animation:rise .7s ease .12s both}
+.hero .cta-row{animation:rise .7s ease .2s both;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--pink);color:#fff;font:600 17px "Bricolage Grotesque",sans-serif;padding:14px 26px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 10px 24px -8px var(--pink);transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 14px 28px -8px var(--pink)}
+.linky{font-weight:600;color:var(--green);text-decoration:none;border-bottom:2px solid var(--mango)}
+.board{background:linear-gradient(160deg,var(--green),#0b2a1b);color:#fff;border-radius:22px;padding:24px 26px;transform:rotate(1.5deg);box-shadow:0 18px 0 var(--mango),0 30px 40px -20px rgba(0,0,0,.35);animation:rise .8s ease .1s both;position:relative}
+.board:before{content:"🍓";position:absolute;top:-18px;right:22px;font-size:34px;animation:float 4s ease-in-out infinite}
+:root[data-theme="dark"] .board,:root:not([data-theme="light"]) .board{color:#0f1a14}
+.board h2{margin:0 0 10px;font-size:15px;font-weight:600;opacity:.85}
+.board li{display:flex;justify-content:space-between;padding:9px 0;border-top:1px dashed rgba(255,255,255,.35);font-size:20px;font-weight:600;list-style:none}
+.board ul{margin:0;padding:0}
+section{padding:36px 0}
+h2.t{font-size:clamp(28px,4vw,40px);letter-spacing:-.03em;margin:0 0 6px;color:var(--green)}
+.sub{color:var(--mute);margin:0 0 24px}
+.trust{display:flex;gap:28px;flex-wrap:wrap;padding:18px 0 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:8px 0}
+.trust div{display:flex;flex-direction:column}
+.trust b{font-size:26px;color:var(--green)}
+.trust span{color:var(--mute);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px;transition:transform .18s ease,box-shadow .18s ease;position:relative;overflow:hidden}
+.item:hover{transform:translateY(-4px);box-shadow:0 16px 28px -16px rgba(0,0,0,.25)}
+.item:before{content:"";position:absolute;inset:0;background:radial-gradient(80px 80px at 85% -10%,rgba(255,183,3,.25),transparent 70%);pointer-events:none}
+.emo{font-size:48px;line-height:1}
+.item b{font-size:19px;letter-spacing:-.01em}
+.price{color:var(--mute);font-size:15px}
+.qty{display:flex;align-items:center;gap:10px;margin-top:8px}
+.qty button{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:20px;cursor:pointer}
+.qty span{min-width:64px;text-align:center;font-weight:600}
+.cart{position:sticky;bottom:calc(12px + env(safe-area-inset-bottom,0px));margin-top:24px;background:var(--green);color:#fff;border-radius:18px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+:root[data-theme="dark"] .cart,:root:not([data-theme="light"]) .cart{color:#0f1a14}
+.cart .btn{background:var(--mango);color:#17261d}
+.boxes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.box{border-radius:18px;padding:22px;background:var(--mango);color:#17261d}
+.box:nth-child(2){background:var(--pink);color:#fff}
+.box:nth-child(3){background:var(--green);color:#fff}
+:root[data-theme="dark"] .box:nth-child(3),:root:not([data-theme="light"]) .box:nth-child(3){color:#0f1a14}
+.box h3{margin:0 0 4px;font-size:24px}
+.box p{margin:0 0 10px}
+.box strong{font-size:22px}
+.visit{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.visit h3{margin:0 0 4px;font-size:18px}
+.visit p{margin:0;color:var(--mute)}
+footer{padding:28px 0 40px;color:var(--mute);font-size:15px;border-top:1px solid var(--line);margin-top:24px}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.board{transform:none}nav a:first-child{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo"><span class="dot"></span>Green Basket Fruits</div><nav><a href="#fruit">Today's fruit</a><a href="#boxes">Gift boxes</a><a href="#visit">Visit</a></nav></header>
+
+<div class="hero">
+<div>
+<span class="kicker">🌿 Fresh from the farm, daily</span>
+<h1>Fruit picked this morning, on your table by noon.</h1>
+<p>We buy from local farms every day and sell what's ripe, by the kilo, at fair prices.</p>
+<div class="cta-row"><a class="btn" href="#fruit">Choose your fruit</a><a class="linky" href="#visit">See our shop →</a></div>
+<div class="trust"><div><b>7+</b><span>years serving the town</span></div><div><b>20+</b><span>fruits, always in season</span></div><div><b>⭐ 4.8</b><span>customer rating</span></div></div>
+</div>
+<div class="board" aria-label="Today's best buys">
+<h2>Best buys today, per kg</h2>
+<ul><li><span>Alphonso mango</span><span>₹220</span></li><li><span>Pomegranate</span><span>₹180</span></li><li><span>Sweet lime</span><span>₹90</span></li><li><span>Red banana</span><span>₹70</span></li></ul>
+</div>
+</div>
+
+<section id="fruit">
+<h2 class="t">Today's fruit</h2>
+<p class="sub">Pick your weight, then send your order on WhatsApp. We pack it and deliver or hold it for pickup.</p>
+<div class="grid" id="grid"></div>
+<div class="cart"><span id="sum">Nothing selected yet</span><a class="btn" id="send" href="#fruit">Order on WhatsApp</a></div>
+</section>
+
+<section id="boxes">
+<h2 class="t">Gift boxes</h2>
+<p class="sub">Ready-packed, wrapped, and delivered the same day.</p>
+<div class="boxes">
+<div class="box"><h3>Family box</h3><p>5 kg of seasonal fruit for the week.</p><strong>₹650</strong></div>
+<div class="box"><h3>Festival hamper</h3><p>Premium fruit, dry fruit, and a greeting card.</p><strong>₹1,400</strong></div>
+<div class="box"><h3>Get-well basket</h3><p>Soft, easy fruit: banana, papaya, grapes, apple.</p><strong>₹500</strong></div>
+</div>
+</section>
+
+<section id="visit">
+<h2 class="t">Visit the shop</h2>
+<div class="visit" style="margin-top:14px">
+<div><h3>Address</h3><p>12 Market Road, Your Town</p></div>
+<div><h3>Hours</h3><p>Every day, 7 am to 9 pm</p></div>
+<div><h3>Phone / WhatsApp</h3><p>+91 93427 50686</p></div>
+</div>
+</section>
+<footer>© Green Basket Fruits. Prices change with the market.</footer>
+</div>
+
+<script>
+var fruits=[["🥭","Alphonso mango",220],["🍌","Red banana",70],["🍎","Kashmir apple",160],["🍇","Black grapes",110],["🍉","Watermelon",30],["🍊","Sweet lime",90],["🥥","Tender coconut",0,45],["🍍","Pineapple",60]];
+var q=fruits.map(function(){return 0});
+var grid=document.getElementById("grid");
+fruits.forEach(function(f,i){
+var unit=f[3]?"each":"kg", p=f[3]||f[2], step=f[3]?1:0.5;
+var d=document.createElement("div");d.className="item";
+d.innerHTML='<div class="emo" aria-hidden="true">'+f[0]+'</div><b>'+f[1]+'</b><div class="price">₹'+p+' per '+unit+'</div><div class="qty"><button aria-label="Less '+f[1]+'">−</button><span>0 '+unit+'</span><button aria-label="More '+f[1]+'">+</button></div>';
+var b=d.querySelectorAll("button"),s=d.querySelector("span");
+function set(v){q[i]=Math.max(0,v);s.textContent=q[i]+" "+unit;update()}
+b[0].onclick=function(){set(q[i]-step)};b[1].onclick=function(){set(q[i]+step)};
+grid.appendChild(d)});
+function update(){
+var total=0,lines=[];
+fruits.forEach(function(f,i){if(q[i]>0){var p=f[3]||f[2];total+=q[i]*p;lines.push(f[1]+" "+q[i]+(f[3]?"":" kg"))}});
+document.getElementById("sum").textContent=lines.length?lines.length+" items, about ₹"+total:"Nothing selected yet";
+var msg="Hi, I'd like to order: "+lines.join(", ")+". Estimated total ₹"+total;
+var a=document.getElementById("send");
+a.href=lines.length?"https://wa.me/919342750686?text="+encodeURIComponent(msg):"#fruit"}
+</script>
+</body>
+</html>
